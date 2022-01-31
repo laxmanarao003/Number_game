@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body >
+<label for="enternumber"> Enter a Number:</label>
+<input type="text" id="enternumber">
+<button onclick="getNumber()" id="xyz">sumbit</button>
+<p>previous number is:</p>
+
+
+<p id="count"></p>
+<p id="high"></p>
+<p id="check"></p>
+
+<p id="abc"></p>
+
+
+        <script>
+            var lucknumber=25;
+            let counter=0;
+            function getNumber(){
+               counter=counter+1;
+                let currentValue =document.querySelector("input[id=enternumber]").value;
+                let previousDate = document.querySelector("p");
+                previousDate.innerHTML=previousDate.innerHTML+ "  "+currentValue;
+
+               let count= document.querySelector("p[id=count]");
+               count.innerHTML="no of time is:"+ " "+counter;
+               if(lucknumber==currentValue){
+                   document.querySelector("p[id=check]").innerHTML="your win the game";
+                   document.querySelector("p[id=check]").style="background-color:green";
+                   document.querySelector("button[id=xyz]").disabled=true;
+                   
+               } else if(lucknumber < currentValue){
+                 document.querySelector("p[id=high]").innerHTML="to high";
+                
+               }else{
+                document.querySelector("p[id=high]").innerHTML="to small";
+               }
+               
+                    
+                if(counter==10) {
+                  document.querySelector("button[id=xyz]").disabled=true;
+                  document.querySelector("p[id=abc]").innerHTML="maxim time is complet so submit button is disabled";
+
+                }
+            }
+    
+        </script>
+    </body>
+</html>
